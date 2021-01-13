@@ -89,15 +89,13 @@ class CatchModal extends Component {
                             </p>
 
                             <form onSubmit={this.handleNaming}>
-                                <label>
-                                    Nickname <br></br>
-                                    <input type="text" value={this.state.nickname} onChange={this.handleChange} id="input-nickname" />
-                                </label>
+                                Nickname <br></br>
+                                <input type="text" value={this.state.nickname} onChange={this.handleChange} id="input-nickname" />
                                 <p>
                                     {this.state.message}
                                 </p>
-                                <input type="submit" value="Save" style={{ float: "right" }} className="modal-button"/>
-                                <button type="button" className="modal-button" onClick={closeModal} >
+                                <input type="submit" value="Save" style={{ float: "right" }} className="modal-button button-primary"/>
+                                <button type="button" className="modal-button button-secondary" onClick={closeModal} >
                                     Release
                                 </button>
                             </form>
@@ -110,7 +108,7 @@ class CatchModal extends Component {
                             <p>
                                 {this.state.nickname} is added to your collection
                             </p>
-                            <button type="button" className="modal-button" onClick={closeModal} style={{ float: "right" }}>
+                            <button type="button" className="modal-button button-primary" onClick={closeModal} style={{ float: "right" }}>
                                 OK
                             </button>
                         </div>
@@ -134,7 +132,7 @@ class CatchModal extends Component {
                                 {pokemonName} broke free!
                             </p>
 
-                            <button type="button" className="modal-button" onClick={handleClose} style={{ float: "right" }}>
+                            <button type="button" className="modal-button button-primary" onClick={handleClose} style={{ float: "right" }}>
                                 OK
                             </button>
                         </div>

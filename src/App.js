@@ -26,7 +26,6 @@ class App extends Component {
     this.state = {
       pokemons: [],
       isLoaded: false,
-      isLoadedNext: false,
       fetching: false,
       offset: 0,
       error: null,
@@ -38,50 +37,46 @@ class App extends Component {
       return;
     }
 
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-      this.setState({
-        fetching: true,
-        isLoadedNext: false
-      });
+    this.setState({
+      fetching: true
+    });
 
-      //Fetch data
-      const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
-          pokemons(limit: $limit, offset: $offset) {
-          count
-          next
-          status
-          results {
-              id
-              name
-              image
-          }
-          }
-      }`;
+    //Fetch data
+    const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
+        pokemons(limit: $limit, offset: $offset) {
+        count
+        next
+        status
+        results {
+            id
+            name
+            image
+        }
+        }
+    }`;
 
-      const gqlVariables = {
-        limit: 10,
-        offset: this.state.offset,
-      };
-
-      fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
-        credentials: 'omit',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query: gqlQuery,
-          variables: gqlVariables,
-        }),
-        method: 'POST',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          this.setState({
-            isLoadedNext: true,
-            offset: this.state.offset + 10,
-            pokemons: [...this.state.pokemons, ...res.data.pokemons.results],
-            fetching: false
-          });
+    const gqlVariables = {
+      limit: 10,
+      offset: this.state.offset,
+    };
+    console.log('fetching')
+    fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
+      credentials: 'omit',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: gqlQuery,
+        variables: gqlVariables,
+      }),
+      method: 'POST',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          offset: this.state.offset + 10,
+          pokemons: [...this.state.pokemons, ...res.data.pokemons.results],
+          fetching: false
         });
-    }
+      });
   }
 
   componentDidMount() {

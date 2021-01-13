@@ -58,7 +58,7 @@ class ListCard extends Component {
                         <table className="card" onClick={this.changeColor}>
                             <tbody>
                                 <tr>
-                                    <td style={{width: "50%"}}>
+                                    <td className="elipsis" style={{width: "50%"}}>
                                         <span className="bold">{diplayedPokemonNumber}</span>
                                     </td>
                                     <td rowSpan="2">
@@ -66,7 +66,7 @@ class ListCard extends Component {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td className="elipsis">
                                         <span className="bold">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>
                                     </td>
                                 </tr>
@@ -85,7 +85,7 @@ class ListCard extends Component {
                 <table className="card" onClick={this.changeColor}>
                     <tbody>
                         <tr>
-                            <td>
+                            <td className="elipsis">
                                 {diplayedPokemonNumber}<br></br>
                                 {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
                             </td>
@@ -94,8 +94,8 @@ class ListCard extends Component {
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <p className="bold">{pokemon.nickname}</p>
+                            <td className="elipsis bold">
+                                {pokemon.nickname}
                             </td>
                         </tr>
                         <tr>

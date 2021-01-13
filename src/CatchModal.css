@@ -9,7 +9,7 @@
 
 .modal-main {
     position:fixed;
-    background-color: silver;
+    background-color: #f5f4f4;
     width: 80%;
     height: auto;
     top:50%;
@@ -21,14 +21,27 @@
 }
 
 #input-nickname {
-    width: 100%;
+    width: 90%;
+    padding: 5px;
+    font-size: large;
 }
 
 .modal-button {
     border-radius: 1rem;
+    border: none;
     font-family: 'Montserrat';
     font-weight: bold;
     padding: 0.5rem;
+    min-width: 5rem;
+    color: white;
+}
+
+.button-primary {
+    background-color: turquoise;
+}
+
+.button-secondary {
+    background-color: tomato;
 }
 
 .modal-shown {

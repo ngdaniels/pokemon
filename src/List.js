@@ -28,7 +28,9 @@ class List extends Component {
         }
 
         //Load more data upon reaching end of page
-        this.props.fetchNext();
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+            this.props.fetchNext();
+        }
     };
 
     componentDidMount() {
@@ -52,7 +54,7 @@ class List extends Component {
 
     render() {
         let { searchResult } = this.state;
-        let { error, pokemons, isLoaded, isLoadedNext } = this.props;
+        let { error, pokemons, isLoaded } = this.props;
 
         // Get owned pokemons
         let owned = JSON.parse(localStorage.getItem('owned'));
@@ -64,7 +66,7 @@ class List extends Component {
                 </p>
                 <form onSubmit={this.search}>
                     Search &nbsp;
-                        <input type="text" value={this.state.search} onChange={this.handleChange} placeholder="Pokémon Number / Name" style={{ width: '65%' }} />
+                        <input type="text" value={this.state.search} onChange={this.handleChange} placeholder="Pokémon Number / Name" style={{ width: '65%', padding:'3px' }} />
                     <input type="submit" value="&#x1F50D;" style={{ marginLeft: '-2rem', width: '2rem', padding: 0, border: "none" }}></input>
                 </form>
             </div>
@@ -86,7 +88,7 @@ class List extends Component {
                     {pokemons.map(pokemon => (
                         <ListCard key={pokemon.name} pokemon={pokemon} page="list" />
                     ))}
-                    <Loading show={!isLoadedNext} />
+                    <Loading show={true} />
                 </div>
             );
         } else {

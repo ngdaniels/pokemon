@@ -81,7 +81,7 @@ class Move extends Component {
                         <thead>
                             <tr>
                                 <td colSpan="2">
-                                    {moveDetail.effect_entries[0].short_effect}
+                                    {moveDetail.effect_entries[0].effect}
                                 </td>
                             </tr>
                         </thead>

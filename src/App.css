@@ -101,8 +101,8 @@ table {
   table-layout: fixed;
 }
 
-td {
-  white-space: nowrap;
+td.elipsis {
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
 }
