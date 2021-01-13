@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(./Fonts/Montserrat-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  src: local('Montserrat'), url(./Fonts/Montserrat-SemiBold.ttf) format('truetype');
+}
+
+body {
+  font-family: 'Montserrat';
+}
+
+.title-bar {
+  text-align: center;
+  padding-top: 0.5rem;
+  background-color: #222831;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo {
+  height: 5rem;
+  transition: 400ms;
+}
+
+.menu-bar {
+  margin: 0;
+  padding: 0;
+  height: 5rem;
+}
+
+ul.menu-bar {
+  background-color: #374045;
+  padding: 0;
+}
+
+ul.menu-bar li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  text-align: center;
+}
+
+ul.menu-bar li a .menu-icon {
+  margin-top: 1rem;
+  height: 2rem;
+}
+
+ul.menu-bar li a {
+  color: #FFF;
+  text-decoration: none;
+  padding: 0;
+  display: inline-block;
+  height: 100%;
+  width: 50%;
+}
+
+.content {
+  margin-top: 10.5rem;
+  transition: 400ms;
+}
+
+.active {
+  background-color: #d89216;
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.padding-top {
+  padding-top: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  border-radius: 1rem;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+button {
+  outline:none;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

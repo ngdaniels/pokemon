@@ -1,0 +1,36 @@
+.detail-table {
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.pokemon-front-picture {
+    float: right;
+    width: 50vw;
+}
+
+.pokemon-back-picture {
+    float: right;
+    width: 25vw;
+}
+
+.move {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+
+}
+
+.catch {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: #a9294f;
+    font-size: large;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
