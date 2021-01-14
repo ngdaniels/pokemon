@@ -196,12 +196,12 @@ class Detail extends Component {
                                     </div>
                                 </td>
                                 <td rowSpan="2">
-                                    <img className="pokemon-front-picture" src={frontImage} alt="pokemon"></img>
+                                    <img className="pokemon-front-picture" src={frontImage} alt={`${pokemon.name}-front`}></img>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <img className="pokemon-back-picture" src={backImage} alt="pokemon"></img>
+                                <td className="text-center">
+                                    <img className="pokemon-back-picture" src={backImage} alt={`${pokemon.name}-back`}></img>
                                 </td>
                             </tr>
                             <tr>

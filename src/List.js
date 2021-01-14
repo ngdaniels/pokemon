@@ -65,16 +65,18 @@ class List extends Component {
                     Pokémons owned: {owned.length}
                 </p>
                 <form onSubmit={this.search}>
-                    Search &nbsp;
+                    <label>
+                        Search &nbsp;
                         <input type="text" value={this.state.search} onChange={this.handleChange} placeholder="Pokémon Number / Name" style={{ width: '65%', padding:'3px' }} />
-                    <input type="submit" value="&#x1F50D;" style={{ marginLeft: '-2rem', width: '2rem', padding: 0, border: "none" }}></input>
+                        <input type="submit" value="&#x1F50D;" style={{ marginLeft: '-2rem', width: '2rem', padding: 0, border: "none" }}></input>
+                    </label>
                 </form>
             </div>
         );
 
         if (error) {
             return <div>Error: {error.message}</div>;
-        } else if (!isLoaded) {
+        } else if (pokemons.length === 0) {
             return (
                 <div>
                     {ownedSearch}
@@ -88,7 +90,7 @@ class List extends Component {
                     {pokemons.map(pokemon => (
                         <ListCard key={pokemon.name} pokemon={pokemon} page="list" />
                     ))}
-                    <Loading show={true} />
+                    <Loading show={!isLoaded} />
                 </div>
             );
         } else {

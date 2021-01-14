@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Pokémon List 1`] = `
+<DocumentFragment>
+  <div
+    class="title-bar"
+  >
+    <img
+      alt="logo"
+      class="logo"
+      src="Pokémon.png"
+    />
+    <div>
+      <ul
+        class="menu-bar"
+      >
+        <li>
+          <a
+            aria-current="page"
+            class="active"
+            href="#/"
+          >
+            <img
+              alt="pokedex-icon"
+              class="menu-icon"
+              src="PokéDex.png"
+            />
+             
+            <br />
+             Pokémon List
+          </a>
+        </li>
+        <li>
+          <a
+            href="#/my_collection"
+          >
+            <img
+              alt="pokeball-icon"
+              class="menu-icon"
+              src="Pokéball.png"
+            />
+             
+            <br />
+             My Pokémon
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="content"
+  >
+    <div>
+      <div
+        class="text-center"
+        id="owned-search"
+      >
+        <p>
+          Pokémons owned: 0
+        </p>
+        <form>
+          <label>
+            Search  
+            <input
+              placeholder="Pokémon Number / Name"
+              style="width: 65%; padding: 3px;"
+              type="text"
+              value=""
+            />
+            <input
+              style="margin-left: -2rem; width: 2rem; padding: 0px;"
+              type="submit"
+              value="🔍"
+            />
+          </label>
+        </form>
+      </div>
+      <div
+        style="text-align: center; padding: 10px;"
+      >
+        <img
+          alt="loading"
+          class="css-3kjrfq"
+          src="loading-pokeball.png"
+          style="width: 20%; display: inline;"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -19,8 +19,8 @@ class Loading extends Component {
         `
         
         return (
-            <div style={{ width: "100%", textAlign: "center", display: (this.props.show ? 'block' : 'none') }}>
-                <Loader src={loadingPokeball} style={{ width: "20%" }}></Loader>
+            <div style={{ textAlign: "center", padding: "10px", display: (this.props.show ? '' : 'none') }}>
+                <Loader src={loadingPokeball} style={{ width: "20%", display: (this.props.show ? 'inline' : 'none') }} alt="loading" ></Loader>
             </div>
         )
     }

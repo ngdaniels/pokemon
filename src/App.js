@@ -38,7 +38,8 @@ class App extends Component {
     }
 
     this.setState({
-      fetching: true
+      fetching: true,
+      isLoaded: false
     });
 
     //Fetch data
@@ -59,7 +60,6 @@ class App extends Component {
       limit: 10,
       offset: this.state.offset,
     };
-    console.log('fetching')
     fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
       credentials: 'omit',
       headers: { 'Content-Type': 'application/json' },
@@ -74,7 +74,8 @@ class App extends Component {
         this.setState({
           offset: this.state.offset + 10,
           pokemons: [...this.state.pokemons, ...res.data.pokemons.results],
-          fetching: false
+          fetching: false,
+          isLoaded: true
         });
       });
   }
@@ -84,41 +85,7 @@ class App extends Component {
     document.addEventListener('scroll', this.trackScrolling);
 
     //Fetch data
-    const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
-      pokemons(limit: $limit, offset: $offset) {
-        count
-        next
-        status
-        results {
-          id
-          name
-          image
-        }
-      }
-    }`;
-
-    const gqlVariables = {
-      limit: 10,
-      offset: this.state.offset,
-    };
-
-    fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
-      credentials: 'omit',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        query: gqlQuery,
-        variables: gqlVariables,
-      }),
-      method: 'POST',
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          isLoaded: true,
-          offset: this.state.offset + 10,
-          pokemons: res.data.pokemons.results
-        });
-      });
+    this.fetchNext();
   };
 
   trackScrolling = () => {
@@ -137,8 +104,8 @@ class App extends Component {
           <img src={Pokémon} className="logo" alt="logo" />
           <div>
             <ul className="menu-bar">
-              <li><NavLink exact to="/"><img src={PokéDex} className="menu-icon" alt="icon" /> <br></br> Pokémon List</NavLink></li>
-              <li><NavLink to="/my_collection"><img src={Pokéball} className="menu-icon" alt="icon" /> <br></br> My Pokémon</NavLink></li>
+              <li><NavLink exact to="/"><img src={PokéDex} className="menu-icon" alt="pokedex-icon" /> <br></br> Pokémon List</NavLink></li>
+              <li><NavLink to="/my_collection"><img src={Pokéball} className="menu-icon" alt="pokeball-icon" /> <br></br> My Pokémon</NavLink></li>
             </ul>
           </div>
         </div>

@@ -1,12 +1,14 @@
 @font-face {
   font-family: 'Montserrat';
   src: local('Montserrat'), url(./Fonts/Montserrat-Light.ttf) format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat';
   font-weight: bold;
   src: local('Montserrat'), url(./Fonts/Montserrat-SemiBold.ttf) format('truetype');
+  font-display: swap;
 }
 
 body {
@@ -20,7 +22,7 @@ body {
   top: 0;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .logo {
@@ -66,8 +68,8 @@ ul.menu-bar li a {
 }
 
 .active {
-  background-color: #d89216;
-
+  background-color: #30475e;
+  font-weight: bold;
 }
 
 .text-center {

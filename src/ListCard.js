@@ -15,7 +15,7 @@ class ListCard extends Component {
         };
     }
 
-    toggleReleaseConfirmation = async() => {
+    toggleReleaseConfirmation = async () => {
         let { pokemon } = this.props;
 
         this.setState({
@@ -36,7 +36,14 @@ class ListCard extends Component {
     };
 
     release = () => {
-        this.props.release(this.props.pokemon.nickname);
+        this.setState({
+            deleted: true
+        });
+
+        setTimeout(() => {
+            this.props.release(this.props.pokemon.nickname);
+        }, 300);
+        
     }
 
     render() {
@@ -51,68 +58,86 @@ class ListCard extends Component {
         }
         diplayedPokemonNumber = `#${diplayedPokemonNumber}`
 
-        if (page === "list") {
-            return (
-                <HashRouter>
-                    <NavLink to={{ pathname: `/detail/${pokemon.name}` }}>
-                        <table className="card" onClick={this.changeColor}>
-                            <tbody>
-                                <tr>
-                                    <td className="elipsis" style={{width: "50%"}}>
-                                        <span className="bold">{diplayedPokemonNumber}</span>
-                                    </td>
-                                    <td rowSpan="2">
-                                        <img className="pokemon-picture" src={pokemon.image} alt="pokemon"></img>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="elipsis">
-                                        <span className="bold">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </NavLink>
-                </HashRouter>
+        let topColumn, botColumn, release;
+
+        if (page === 'list') {
+            topColumn = (
+                <span className="bold">{diplayedPokemonNumber}</span>
             );
+            botColumn = (
+                <span className="bold">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>
+            );
+            release = null;
         }
-        else if (page === "collection") {
+        else if (page === 'collection') {
+            topColumn = (
+                <span className="bold">{pokemon.nickname}</span>
+            );
+            botColumn = (
+                <div className="bold">
+                    {diplayedPokemonNumber}<br></br>
+                    {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                </div>
+            );
+
             let releaseConfirmationText = this.state.showConfirmationText ? <div className="confirmation-text">Are you sure to release {pokemon.nickname}?</div> : '';
-            let releaseConfirmationButton = this.state.releasing ? <div className="release-button confirm-release" onClick={this.release}>✔</div> : '';
+            let releaseConfirmationButton = this.state.releasing ? <div className="card-button confirm-release" onClick={this.release}>✔</div> : '';
             let releaseButtonText = this.state.releasing ? "✘" : "Release";
 
-            return (
-                <table className="card" onClick={this.changeColor}>
+            release = (
+                <tfoot>
+                    <tr>
+                        <td colSpan="2" >
+                            <div className="flex-end">
+                                {releaseConfirmationText}
+                                {releaseConfirmationButton}
+
+                                <div className="card-button button-release" id={`release-${pokemon.name}-${pokemon.nickname}`} onClick={this.toggleReleaseConfirmation}>
+                                    {releaseButtonText}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            );
+        }
+
+        let cardTable = (
+            <HashRouter>
+                <NavLink to={`/detail/${pokemon.name}`} style={{ display: "contents" }}>
                     <tbody>
                         <tr>
-                            <td className="elipsis">
-                                {diplayedPokemonNumber}<br></br>
-                                {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                            <td className="elipsis" style={{ width: "50%" }}>
+
+                                {topColumn}
+
                             </td>
                             <td rowSpan="2">
-                                <img className="pokemon-picture" src={pokemon.image} alt="pokemon"></img>
+                                <img className="pokemon-picture" src={pokemon.image} alt={pokemon.name}></img>
                             </td>
                         </tr>
                         <tr>
-                            <td className="elipsis bold">
-                                {pokemon.nickname}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" >
-                                <div className="release">
-                                    {releaseConfirmationText}
-                                    {releaseConfirmationButton}
-
-                                    <div className="release-button" id={`release-${pokemon.name}-${pokemon.nickname}`} onClick={this.toggleReleaseConfirmation}>
-                                        {releaseButtonText}
-                                    </div>
-                                </div>
+                            <td className="elipsis">
+                                {botColumn}
                             </td>
                         </tr>
                     </tbody>
+                </NavLink>
+            </HashRouter>
+        );
+
+        if (page === "collection" || page === "list") {
+            return (
+                <table className="card" style={ {transform: `scaleY(${this.state.deleted ? 0 : 1})` } }>
+                    {cardTable}
+                    {release}
                 </table>
             );
+        }
+        else {
+            return (
+                ""
+            )
         }
     }
 }

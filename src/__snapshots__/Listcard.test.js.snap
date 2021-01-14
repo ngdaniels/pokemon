@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Card List Card Content for Owned Pokemon List 1`] = `
+<DocumentFragment>
+  <a
+    href="#/detail/mewtwo"
+    style="display: contents;"
+  />
+  <table
+    class="card"
+    style="transform: scaleY(1);"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="elipsis"
+          style="width: 50%;"
+        >
+          <span
+            class="bold"
+          >
+            mew
+          </span>
+        </td>
+        <td
+          rowspan="2"
+        >
+          <img
+            alt="mewtwo"
+            class="pokemon-picture"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="elipsis"
+        >
+          <div
+            class="bold"
+          >
+            #150
+            <br />
+            Mewtwo
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td
+          colspan="2"
+        >
+          <div
+            class="flex-end"
+          >
+            <div
+              class="card-button button-release"
+              id="release-mewtwo-mew"
+            >
+              Release
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`List Card List Card Content for Pokemon List 1`] = `
+<DocumentFragment>
+  <a
+    href="#/detail/mewtwo"
+    style="display: contents;"
+  />
+  <table
+    class="card"
+    style="transform: scaleY(1);"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="elipsis"
+          style="width: 50%;"
+        >
+          <span
+            class="bold"
+          >
+            #150
+          </span>
+        </td>
+        <td
+          rowspan="2"
+        >
+          <img
+            alt="mewtwo"
+            class="pokemon-picture"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="elipsis"
+        >
+          <span
+            class="bold"
+          >
+            Mewtwo
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
