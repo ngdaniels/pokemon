@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import './ListCard.css';
 import $ from 'jquery';
 import {
-    NavLink,
-    HashRouter
+    Redirect
 } from "react-router-dom";
 
 class ListCard extends Component {
@@ -14,6 +13,12 @@ class ListCard extends Component {
             showConfirmationText: false
         };
     }
+
+    goToDetailPage = () => {
+        this.setState({
+            goToDetail: true
+        });
+    };
 
     toggleReleaseConfirmation = async () => {
         let { pokemon } = this.props;
@@ -103,28 +108,28 @@ class ListCard extends Component {
         }
 
         let cardTable = (
-            <HashRouter>
-                <NavLink to={`/detail/${pokemon.name}`} style={{ display: "contents" }}>
-                    <tbody>
-                        <tr>
-                            <td className="elipsis" style={{ width: "50%" }}>
-
-                                {topColumn}
-
-                            </td>
-                            <td rowSpan="2">
-                                <img className="pokemon-picture" src={pokemon.image} alt={pokemon.name}></img>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="elipsis">
-                                {botColumn}
-                            </td>
-                        </tr>
-                    </tbody>
-                </NavLink>
-            </HashRouter>
+            <tbody onClick={this.goToDetailPage}>
+                <tr>
+                    <td className="elipsis" style={{ width: "50%" }}>
+                        {topColumn}
+                    </td>
+                    <td rowSpan="2">
+                        <img className="pokemon-picture" src={pokemon.image} alt={pokemon.name}></img>
+                    </td>
+                </tr>
+                <tr>
+                    <td className="elipsis">
+                        {botColumn}
+                    </td>
+                </tr>
+            </tbody>
         );
+
+        if (this.state.goToDetail) {
+            return (
+                <Redirect to={`detail/${pokemon.name}`} />
+            )
+        }
 
         if (page === "collection" || page === "list") {
             return (

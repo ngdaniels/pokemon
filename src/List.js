@@ -68,7 +68,7 @@ class List extends Component {
                     <label>
                         Search &nbsp;
                         <input type="text" value={this.state.search} onChange={this.handleChange} placeholder="Pokémon Number / Name" style={{ width: '65%', padding:'3px' }} />
-                        <input type="submit" value="&#x1F50D;" style={{ marginLeft: '-2rem', width: '2rem', padding: 0, border: "none" }}></input>
+                        <input type="submit" value="&#x1F50D;" style={{ marginLeft: '-2.5rem', width: '2rem', padding: 0, border: "none" }}></input>
                     </label>
                 </form>
             </div>

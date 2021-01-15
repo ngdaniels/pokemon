@@ -2,10 +2,6 @@
 
 exports[`List Card List Card Content for Owned Pokemon List 1`] = `
 <DocumentFragment>
-  <a
-    href="#/detail/mewtwo"
-    style="display: contents;"
-  />
   <table
     class="card"
     style="transform: scaleY(1);"
@@ -70,10 +66,6 @@ exports[`List Card List Card Content for Owned Pokemon List 1`] = `
 
 exports[`List Card List Card Content for Pokemon List 1`] = `
 <DocumentFragment>
-  <a
-    href="#/detail/mewtwo"
-    style="display: contents;"
-  />
   <table
     class="card"
     style="transform: scaleY(1);"

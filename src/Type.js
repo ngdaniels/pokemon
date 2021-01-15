@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 class Type extends Component {
     render() {
-        let { type } = this.props;
+        let type = this.props.type || '???';
 
         let Element = styled.button`
             background-color: ${props => props.background};
@@ -79,6 +79,7 @@ class Type extends Component {
                 background = "#000000";
                 break;
             default:
+                background = "#FFFFFF";
                 break;
         }
 

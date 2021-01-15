@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokémon Type Pokémon Type defined 1`] = `
+<DocumentFragment>
+  <button
+    class="css-h8mfs4"
+  >
+    DRAGON
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Pokémon Type Pokémon Type undefined 1`] = `
+<DocumentFragment>
+  <button
+    class="css-8zi4cn"
+  >
+    ???
+  </button>
+</DocumentFragment>
+`;

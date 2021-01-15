@@ -89,8 +89,11 @@ class CatchModal extends Component {
                             </p>
 
                             <form onSubmit={this.handleNaming}>
-                                Nickname <br></br>
-                                <input type="text" value={this.state.nickname} onChange={this.handleChange} id="input-nickname" />
+                                <label>
+                                    Nickname <br></br>
+                                    <input type="text" value={this.state.nickname} onChange={this.handleChange} id="input-nickname" />
+                                </label>
+                                
                                 <p>
                                     {this.state.message}
                                 </p>
@@ -116,7 +119,7 @@ class CatchModal extends Component {
                 }
                 
                 return (
-                    <div className="modal modal-shown">
+                    <div className="modal modal-shown" id="catch-modal">
                         <div className="modal-main">
                             {modal}
                         </div>
@@ -125,7 +128,7 @@ class CatchModal extends Component {
             }
             else {
                 return (
-                    <div className="modal modal-shown">
+                    <div className="modal modal-shown" id="catch-modal">
                         <div className="modal-main">
                             <p>
                                 Oh no!<br></br>

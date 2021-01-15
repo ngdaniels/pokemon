@@ -16,7 +16,7 @@ class Detail extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            pokemonName: props.match.params.pokemonName,
+            pokemonName: props.match.params.pokemonName.toLowerCase(),
             showModal: false,
             caught: false,
             catching: false
@@ -169,7 +169,7 @@ class Detail extends Component {
             return <Loading show="true"/>;
         } else if (!pokemon.id) {
             return (
-                <div style={{textAlign: "center", margin:"10px"}}>
+                <div style={{textAlign: "center", margin:"10px", paddingTop: "10px"}}>
                     <img src={Pikachu} style={{width: "80%"}} alt="not-found"></img> 
                     <p>Pokémon not found</p>
                 </div>

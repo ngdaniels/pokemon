@@ -68,7 +68,7 @@ exports[`App Pokémon List 1`] = `
               value=""
             />
             <input
-              style="margin-left: -2rem; width: 2rem; padding: 0px;"
+              style="margin-left: -2.5rem; width: 2rem; padding: 0px;"
               type="submit"
               value="🔍"
             />
