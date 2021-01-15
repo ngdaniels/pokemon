@@ -9,6 +9,8 @@ import Pokéball from './Assets/Pokéball.png';
 import PokéballCaught from './Assets/PokéballCaught.png';
 import Spark from './Assets/Spark.png';
 import Pikachu from './Assets/Pikachu.png';
+import { gql } from '@apollo/client';
+import client from './ApolloClient.js'
 
 class Detail extends Component {
     constructor(props) {
@@ -26,52 +28,43 @@ class Detail extends Component {
     componentDidMount() {
         this.mounted = true;
 
-        const gqlQuery = `query pokemon($name: String!) {
-            pokemon(name: $name) {
-              id
-              name
-              weight
-              height
-              sprites {
-                front_default
-                back_default
-              }
-              moves {
-                move {
-                  name
-                  url
+        client.query({
+            query: gql`
+            query pokemon($name: String!) {
+                pokemon(name: $name) {
+                    id
+                    name
+                    weight
+                    height
+                    sprites {
+                    front_default
+                    back_default
+                    }
+                    moves {
+                        move {
+                            name
+                            url
+                        }
+                    }
+                    types {
+                        type {
+                            name
+                        }
+                    }
                 }
-              }
-              types {
-                type {
-                  name
-                }
-              }
             }
-          }`;
-
-        const gqlVariables = {
-            name: this.state.pokemonName,
-        };
-
-        fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
-            credentials: 'omit',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                query: gqlQuery,
-                variables: gqlVariables,
-            }),
-            method: 'POST',
-        })
-            .then((res) => res.json())
-            .then((res) => {
-                if (this.mounted) {
-                    this.setState({
-                        isLoaded: true,
-                        pokemon: res.data.pokemon
-                    });
-                }
-            });
+            `,
+            variables: {
+                name: this.state.pokemonName
+            }
+        }).then((res) => {
+            if (this.mounted) {
+                this.setState({
+                    isLoaded: true,
+                    pokemon: res.data.pokemon
+                });
+            }
+        });
     }
 
     componentWillUnmount() {

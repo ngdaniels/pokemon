@@ -14,7 +14,6 @@ class Collection extends Component {
 
         //Find index of selected pokemon
         let selectedPokemonIndex = owned.findIndex(pokemon => pokemon.nickname === nickname);
-        console.log(selectedPokemonIndex)
 
         //Remove pokemon from array
         owned.splice(selectedPokemonIndex, 1);
