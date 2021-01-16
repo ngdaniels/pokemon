@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/pokemon/static/css/main.b934b780.chunk.css",
-    "main.js": "/pokemon/static/js/main.e78c02a0.chunk.js",
-    "main.js.map": "/pokemon/static/js/main.e78c02a0.chunk.js.map",
+    "main.js": "/pokemon/static/js/main.5013a1a7.chunk.js",
+    "main.js.map": "/pokemon/static/js/main.5013a1a7.chunk.js.map",
     "runtime-main.js": "/pokemon/static/js/runtime-main.783eb66a.js",
     "runtime-main.js.map": "/pokemon/static/js/runtime-main.783eb66a.js.map",
-    "static/js/2.400f172b.chunk.js": "/pokemon/static/js/2.400f172b.chunk.js",
-    "static/js/2.400f172b.chunk.js.map": "/pokemon/static/js/2.400f172b.chunk.js.map",
+    "static/js/2.26ef285d.chunk.js": "/pokemon/static/js/2.26ef285d.chunk.js",
+    "static/js/2.26ef285d.chunk.js.map": "/pokemon/static/js/2.26ef285d.chunk.js.map",
     "static/js/3.017f0bc8.chunk.js": "/pokemon/static/js/3.017f0bc8.chunk.js",
     "static/js/3.017f0bc8.chunk.js.map": "/pokemon/static/js/3.017f0bc8.chunk.js.map",
     "index.html": "/pokemon/index.html",
     "static/css/main.b934b780.chunk.css.map": "/pokemon/static/css/main.b934b780.chunk.css.map",
-    "static/js/2.400f172b.chunk.js.LICENSE.txt": "/pokemon/static/js/2.400f172b.chunk.js.LICENSE.txt",
+    "static/js/2.26ef285d.chunk.js.LICENSE.txt": "/pokemon/static/js/2.26ef285d.chunk.js.LICENSE.txt",
     "static/media/App.css": "/pokemon/static/media/Montserrat-SemiBold.fa8441f3.ttf",
     "static/media/PokéDex.c003c314.png": "/pokemon/static/media/PokéDex.c003c314.png",
     "static/media/Pokémon.c6fe395e.png": "/pokemon/static/media/Pokémon.c6fe395e.png",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.783eb66a.js",
-    "static/js/2.400f172b.chunk.js",
+    "static/js/2.26ef285d.chunk.js",
     "static/css/main.b934b780.chunk.css",
-    "static/js/main.e78c02a0.chunk.js"
+    "static/js/main.5013a1a7.chunk.js"
   ]
 }
