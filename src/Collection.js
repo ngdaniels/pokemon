@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ListCard from './ListCard.js';
+import $ from 'jquery';
 
 class Collection extends Component {
     constructor(props) {
@@ -8,6 +9,21 @@ class Collection extends Component {
             owned: JSON.parse(localStorage.getItem('owned'))
         };
     }
+
+    trackScrolling = () => {
+        //Make header smaller on scroll
+        if ($(window).scrollTop() > 1) {
+            $('.content').css("margin-top", '8.5rem');
+        }
+        else {
+            $('.content').css("margin-top", '10.5rem');
+        }
+    };
+
+    componentDidMount() {
+        //Set event listener
+        document.addEventListener('scroll', this.trackScrolling);
+    };
     
     release = (nickname) => {
         let owned = this.state.owned;
