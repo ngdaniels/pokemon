@@ -5,48 +5,66 @@ exports[`Move Move component after move detail is fetched 1`] = `
   <div
     class="move-detail"
   >
-    <span
-      style="float: right;"
+    <div
+      style="line-height: 3rem;"
     >
-      <button
-        class="css-xsck4j"
+      <span
+        class="arrow"
+        style="transform: rotate(0deg);"
       >
-        PSYCHIC
-      </button>
-    </span>
-    <p
-      class="bold"
+        ►
+      </span>
+      <span
+        class="bold"
+      >
+        Teleport
+      </span>
+      <span
+        style="float: right;"
+      >
+        <button
+          class="css-xsck4j"
+        >
+          PSYCHIC
+        </button>
+      </span>
+    </div>
+    <div
+      class="move-table-container"
+      style="max-height: 0;"
     >
-      Teleport
-    </p>
-    <hr />
-    <table
-      class="move-table"
-    >
-      <thead>
-        <tr>
-          <td
-            colspan="2"
-          >
-            Does nothing.  Wild battles end immediately.
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td
-            style="width: 50%; padding: 1rem 0px;"
-          >
-            Power: N/A
-          </td>
-          <td
-            style="width: 50%; padding: 1rem 0px;"
-          >
-            PP: 20
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <table
+        class="move-table"
+      >
+        <thead>
+          <tr>
+            <td
+              class="table-header-column"
+            >
+              Power: N/A
+            </td>
+            <td
+              class="table-header-column"
+            >
+              PP: 20
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              colspan="2"
+            >
+              <div
+                class="move-explanation"
+              >
+                Does nothing.  Wild battles end immediately.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -56,11 +74,28 @@ exports[`Move Move component before move detail is fetched 1`] = `
   <div
     class="move-detail"
   >
-    <p
-      class="bold"
+    <div
+      style="line-height: 3rem;"
     >
-      Teleport
-    </p>
+      <span
+        class="arrow"
+        style="transform: rotate(0deg);"
+      >
+        ►
+      </span>
+      <span
+        class="bold"
+      >
+        Teleport
+      </span>
+    </div>
+    <div
+      class="move-table-container"
+      style="max-height: 0;"
+    >
+      <hr />
+      Loading Details ...
+    </div>
   </div>
 </DocumentFragment>
 `;
