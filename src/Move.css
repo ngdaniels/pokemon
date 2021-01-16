@@ -5,7 +5,32 @@
     margin-bottom: 5px;
 }
 
-.move-table {
+.move-table-container {
     width: 90%;
     margin-left: 1rem;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.move-table {
+    border-top: 2px solid #705848;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.table-header-column {
+    width: 50%;
+    padding: 1rem 0;
+}
+
+.move-explanation {
+    max-height: 10rem;
+    overflow: auto;
+    font-size: small;
+    line-height: 125%;
+}
+
+.arrow {
+    float: left;
+    transition: 500ms;
 }

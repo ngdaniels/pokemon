@@ -75,7 +75,7 @@ class List extends Component {
         );
 
         if (error) {
-            return <div>Error: {error.message}</div>;
+            return <div className="text-center"><br></br>Cannot Load Pokémon Data</div>;
         } else if (pokemons.length === 0) {
             return (
                 <div>

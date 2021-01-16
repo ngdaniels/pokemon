@@ -29,6 +29,14 @@ class Collection extends Component {
         // Get owned pokemons
         let owned = this.state.owned;
 
+        let ownedTotal = (
+            <div className="text-center" id="owned-search">
+                <p>
+                    Pokémons owned: {owned.length}
+                </p>
+            </div>
+        );
+
         if (owned.length === 0) {
             return (
                 <div className="text-center padding-top" style={{marginTop: '1rem'}}>
@@ -37,7 +45,8 @@ class Collection extends Component {
             ) 
         }
         return (
-            <div className="padding-top">
+            <div>
+                {ownedTotal}
                 {owned.map((own, index) => (
                     <ListCard key={`${own.pokemonName}-${own.nickname}`} page="collection" release={this.release} pokemon={{ id: own.pokemonId, index:index, name: own.pokemonName, image: own.pokemonImage, nickname: own.nickname }} />
                 ))}

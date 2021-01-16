@@ -64,6 +64,10 @@ class Detail extends Component {
                     pokemon: res.data.pokemon
                 });
             }
+        }).catch((error) => {
+            this.setState({
+                error
+            });
         });
     }
 
@@ -157,7 +161,7 @@ class Detail extends Component {
         let { error, isLoaded, pokemon } = this.state;
 
         if (error) {
-            return <div>Error: {error.message}</div>;
+            return <div className="text-center"><br></br>Cannot Load Pokémon Data</div>;
         } else if (!isLoaded) {
             return <Loading show="true"/>;
         } else if (!pokemon.id) {

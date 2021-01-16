@@ -72,7 +72,12 @@ class App extends Component {
 					fetching: false,
 					isLoaded: true
 				});
-			});;
+			})
+			.catch((error) => {
+				this.setState({
+					error
+				});
+			});
 	}
 
 	componentDidMount() {
