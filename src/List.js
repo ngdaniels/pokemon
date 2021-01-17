@@ -3,7 +3,6 @@ import ListCard from './ListCard.js';
 import Loading from './Loading.js';
 import $ from 'jquery';
 import { Redirect } from 'react-router-dom';
-import './List.css';
 
 class List extends Component {
     constructor(props) {
@@ -19,14 +18,6 @@ class List extends Component {
     }
 
     trackScrolling = () => {
-        //Make header smaller on scroll
-        if ($(window).scrollTop() > 1) {
-            $('.content').css("margin-top", '8.5rem');
-        }
-        else {
-            $('.content').css("margin-top", '10.5rem');
-        }
-
         //Load more data upon reaching end of page
         if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
             this.props.fetchNext();

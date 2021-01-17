@@ -89,12 +89,20 @@ class App extends Component {
 	};
 
 	trackScrolling = () => {
+		//Make header smaller on scroll
 		if ($(window).scrollTop() > 1) {
 			$(".logo").css("height", "3rem");
 		}
 		else {
 			$(".logo").css("height", "5rem");
 		}
+
+        if ($(window).scrollTop() > 1) {
+            $('.content').css("margin-top", '8.5rem');
+        }
+        else {
+            $('.content').css("margin-top", '10.5rem');
+        }
 	};
 
 	render() {

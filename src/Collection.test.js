@@ -16,6 +16,9 @@ describe('Collection', () => {
 
         let message = screen.queryByText("You don't own any Pokémon");
         expect(message).toBeNull();
+
+        let ownedTotal = screen.queryByText("Pokémons Owned", { exact: false });
+        expect(ownedTotal).toBeInTheDocument();
     });
 
     test('Toggle Release Pokemon then Release Pokemon', async () => {

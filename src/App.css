@@ -72,6 +72,15 @@ ul.menu-bar li a {
   font-weight: bold;
 }
 
+#owned-search {
+  position: sticky;
+  top: 8.5rem;
+  background-color: silver;
+  margin-top: 0;
+  padding: 0.8rem 0;
+  z-index: 1;
+}
+
 .text-center {
   text-align: center;
 }
